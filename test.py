@@ -6,21 +6,21 @@ import Calculadora
 class TestCalculator(unittest.TestCase):  
     def test_addition(self):  
         with patch('builtins.input', side_effect=['2', '3', '+']):  
-            expected_output = "O resultado é: 5\n"  
+            expected_output = "O resultado é: 5.0\n"  
             with patch('sys.stdout', new=StringIO()) as fake_out:  
                 Calculadora.main()  
                 self.assertEqual(fake_out.getvalue(), expected_output)  
   
     def test_subtraction(self):  
         with patch('builtins.input', side_effect=['5', '2', '-']):  
-            expected_output = "O resultado é: 3\n"  
+            expected_output = "O resultado é: 3.0\n"  
             with patch('sys.stdout', new=StringIO()) as fake_out:  
                 Calculadora.main()  
                 self.assertEqual(fake_out.getvalue(), expected_output)  
   
     def test_multiplication(self):  
         with patch('builtins.input', side_effect=['4', '2', '*']):  
-            expected_output = "O resultado é: 8\n"  
+            expected_output = "O resultado é: 8.0\n"  
             with patch('sys.stdout', new=StringIO()) as fake_out:  
                 Calculadora.main()  
                 self.assertEqual(fake_out.getvalue(), expected_output)  

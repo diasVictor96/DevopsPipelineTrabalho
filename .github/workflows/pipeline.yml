@@ -24,9 +24,6 @@ jobs:
     - name: Run unit tests  
       run: python -m unittest discover -s tests -p "*test.py"  
   
-    - name: Run calculator  
-      run: python Calculadora.py  
-  
     - name: Upload test results  
       uses: actions/upload-artifact@v2  
       with:  
